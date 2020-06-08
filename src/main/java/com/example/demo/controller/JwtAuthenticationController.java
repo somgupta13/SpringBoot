@@ -38,9 +38,9 @@ public class JwtAuthenticationController {
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
-        log.info("userdetails"+userDetails);
+//        log.info("userdetails"+userDetails);
         final String token = jwtTokenUtil.generateToken(userDetails);
-        log.info("shivamtoken"+token);
+//        log.info("shivamtoken"+token);
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
